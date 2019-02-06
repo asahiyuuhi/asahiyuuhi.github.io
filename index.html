@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Sitesite</title>
   <link rel="stylesheet" href="style.css">
-  
+  <style type="text/css"> 
+
+body { 
+overflow-x: hidden; 
+} 
+ 
+</style>
 </head>
 <body>
-  
+<div class="wrapper">
 <div id="button"> Menu</div>
 <div class="a_container">
    
@@ -44,13 +50,13 @@
 
 <div class="conta">
   <div class="conta2">
-  <div class="com">
+  <div id="header">
     <img src="./img/logo.png" alt="">
   </div>
 
   <main>
-    <section>
-      <nav><h1>kakikuko</h1></nav>
+    <section class="section">
+      <div id="nav" class="one"><h1>kakikuko</h1></div>
       <article>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
@@ -76,11 +82,13 @@
   </main>
  </div><!--.conta2-->      
 </div><!--conta-->
-
+</div>
 
 <script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery-1.7.2.min.js"></script>
+
 <script src="js/menu.js"></script>
-<script src="js/sample.js"></script>
 
 <script>
 $(function(){
@@ -93,6 +101,9 @@ var menu = $('.a_container'), // スライドインするメニューを指定
     menuBtn.on('click', function(){
     // body に open クラスを付与する
     body.toggleClass('open');
+    var windowWidth = $(window).width();
+     var windowAm = 2000;
+    if (windowWidth <= windowAm){
         if(body.hasClass('open')){
             // open クラスが body についていたらメニューをスライドインする
             body.animate({'left' : menuWidth }, 300);            
@@ -101,7 +112,8 @@ var menu = $('.a_container'), // スライドインするメニューを指定
             $("#button").css("border","0px solid transparent");
             $("#button").css("box-shadow","0px 0px 0px transparent");
             $(".conta").css("margin-left","285px");
-            $("nav h1").css("margin-left","285px");
+            $("#nav h1").css("margin-left","285px");
+
 
         } else {
             // open クラスが body についていなかったらスライドアウトする
@@ -110,12 +122,111 @@ var menu = $('.a_container'), // スライドインするメニューを指定
             $("#button").css("background","url(./img/open2.png");
             $("#button").css("border","0px solid transparent");
             $(".conta").css("margin-left","0px");
-            $("nav h1").css("margin-left","0px");
-
+            $("#nav h1").css("margin-left","0px");
+}
         }             
     });
 });    
 </script>
+<script>
+
+( function() {
+    const target     = document.getElementById( 'header' ),
+          height     = 100;
+    let offset       = 0,
+        lastPosition = 0,
+        ticking      = false;
+
+    function onScroll() {
+        if( lastPosition > height ) {
+            if( lastPosition > offset ) {
+                target.classList.add( 'head-animation' );
+
+                $('#nav').addClass("is-fixed");
+                $('article').addClass("position","relative");
+                $('article').addClass("top","0");
+
+
+            } else {
+               $('#nav').removeClass("is-fixed");
+               $('#nav').css("cssText" ,"position relative !important");
+               
+       target.classList.remove( 'head-animation' );
+
+
+            }
+            offset = lastPosition;
+
+        }
+    }
+    window.addEventListener( 'scroll', function(e) {
+        lastPosition = window.scrollY;
+
+        if( !ticking ) {
+            window.requestAnimationFrame( function() {
+                onScroll( lastPosition );
+                ticking = false;
+
+            });
+            ticking = true;
+        }
+    });
+})();
+</script>
 
 </body>
+
+<style>
+@media screen and (max-width: 1095px){
+   #header {
+  background: #fff;
+  box-shadow: 0 4px 8px -3px rgba(17, 17, 17, .06);
+  height: 100px;
+  padding: 25px 285px 25px 0px;
+  position: fixed;
+  top: 0;
+  transition: .3s cubic-bezier(.4, 0, .2, 1);
+  width: 100%;
+  z-index: 1000;
+
+
+}
+#header img{
+height: 50px;
+width: auto;
+margin: 0px;
+margin-right: 50px;
+position: absolute;
+right: 40px;
+}
+}
+@media screen and (min-width: 1096px){
+   #header {
+  background: #fff;
+  box-shadow: 0 4px 8px -3px rgba(17, 17, 17, .06);
+  height: 100px;
+  padding: 25px 285px 25px 0px;
+  position: fixed;
+  top: 0;
+  transition: .3s cubic-bezier(.4, 0, .2, 1);
+  width: 100%;
+  z-index: 1000;
+
+
+}
+#header img{
+height: 50px;
+width: auto;
+margin: 0px;
+margin-right: 50px;
+position: absolute;
+right: 325px;
+}
+}
+.head-animation {
+  transform: translateY(-100%);
+}
+
+}
+</style>
 </html>

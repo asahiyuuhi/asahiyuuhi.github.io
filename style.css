@@ -16,6 +16,7 @@ a{
     height:110px;
     overflow: hidden;
 }
+
 .a_item_r:hover{
 }
 .selected{
@@ -24,7 +25,10 @@ a{
     display:none;
     margin:10px 0;
     padding: 20px;
-    color: #000;
+    color: #553781;
+}
+.contact{
+  color: #553781;
 }
 .item1{
  position: relative;
@@ -146,7 +150,7 @@ box-shadow: 0px solid transparent;
     background: #3498db;
   }
  
-  nav {
+  #nav {
     height: 100px;
     background: rgba( 255, 255, 255, 0.55 );;
   }
@@ -176,13 +180,17 @@ box-shadow: 0px solid transparent;
   margin: 25px;
   height: 50px;
   }
-  .is-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-}
+
+  #com img{
+  margin: 25px;
+  height: 50px;
+  }
+
+  #header img{
+    margin: 25px;
+  height: 50px;
+  }
+ 
 @media screen and (max-width: 1095px){
 .is-fixed {
   position: fixed;
@@ -191,7 +199,16 @@ box-shadow: 0px solid transparent;
   z-index: 2;
   width: 100%;
   
-  background: #fff;
+  background: #fff !important;
+}
+.is-fixed h1{
+  padding-left: 100px !important;
+  margin-top: 15px;
+}
+.one h1{
+ padding-left:40px;
+
+
 }
 .com {
     position: fixed;
@@ -202,24 +219,29 @@ box-shadow: 0px solid transparent;
     transition: 9s;
     text-align: right;
   }
-.section h1 {
- float: left;
-}
+  #com {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    transition: 9s;
+    text-align: right;
+  }
+
  main {
     padding: 320px 20px 0px;
     background: rgba( 255, 255, 255, 0.55 );
     
   }
-h1 {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
+.one h1 {
+
+   
     color: #ddd;
     font-size: 2em;
     text-align: left;
     transform: translateY(-50%);
-    padding-left: 20px;
+    padding-left: 50px;
   }
 .conta {
 background: url('./img/e10.jpg');
@@ -227,8 +249,14 @@ background: url('./img/e10.jpg');
 .com{
 background: rgba( 255, 255, 255, 0.55 );
 }
+#com{
+background: rgba( 255, 255, 255, 0.55 );
+}
+#header{
+background: rgba( 255, 255, 255, 0.55 );
+}
   section {
-    max-width: 960px;
+    
     
     margin: 0 auto;
     background: #fff;
@@ -239,9 +267,7 @@ background: rgba( 255, 255, 255, 0.55 );
 article{
  padding: 0 20px;
 }
-nav{
- position: relative;
-}
+
  h1 {
     position: absolute;
     top: 50%;
@@ -252,6 +278,10 @@ nav{
     
     transform: translateY(-50%);
   }
+article{
+ padding: 60px 20px 0px;
+ margin-top: -20px;
+}
 }
 @media screen and (min-width: 1096px){
 #button{
@@ -275,11 +305,11 @@ background: url('./img/e10.jpg');
 .conta{
  float: right;
  width: 100%;
- margin-left: -285px;
+ padding-left: 285px;
 
 }
 .conta2{
-margin-left: 285px;
+
 }
 .com {
     position: fixed;
@@ -292,10 +322,29 @@ margin-left: 285px;
    
     
   }
+
 .com{
  background: rgba(255, 255, 255, 0.55);
  margin-left: 285px;
  padding-right: 285px;
+ text-align: right;
+}
+#com {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    
+    margin: 0 auto;
+    
+   background: rgba(255, 255, 255, 0.55);
+ 
+ text-align: right;
+    
+  }
+#header{
+background: rgba(255, 255, 255, 0.55);
+ 
  text-align: right;
 }
  main {
@@ -313,32 +362,46 @@ section {
   }
   
 article{
- padding: 0 20px;
+ padding: 60px 20px 0px;
+ margin-top: -20px;
 }
-  
+
+.one {
+    height: 100px;
+    background: rgba( 255, 255, 255, 0.55 );
+    padding: 25px 20px;
+
+}
+.one h1{
+ color: #ddd;
+ 
+}
+
 .is-fixed {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 285px;
   z-index: 2;
   width: 100%;
-  margin-left: 285px;
-  background: #fff;
-}
-nav{
-position: relative;
-}
- h1 {
-    position: absolute;
-    top: 50%;
-    text-align: center;
-    width: 100%;
+  padding: 25px 40px;
+  box-sizing: border-box;
+  background: #fff !important;
+} 
+.is-fixed h1{
+ text-align: left;
+ 
+ width: 100%;
     color: #ddd;
     font-size: 1.8em;
-    padding-right: 285px;
-    transform: translateY(-50%);
-  }
+ transform: translateY(100%);
+ position: absolute;
+    top: -10px;
+    left: 60px;
 }
- 
-
+ main {
+    padding: 320px 0px 0px;
+    background: rgba( 255, 255, 255, 0.55 );
+    
+  }
+  }
 @media screen and (max-width: )
