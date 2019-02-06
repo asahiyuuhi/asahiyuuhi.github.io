@@ -295,9 +295,11 @@ article{
     background: #3498db;
   }
  
-  #nav {
+  .one {
     height: 100px;
-    background: rgba( 255, 255, 255, 0.55 );;
+    background: rgba( 255, 255, 255, 0.55 );
+    box-sizing: border-box;
+    padding: 30px 0 25px;
   }
   main {
     padding: 320px 0px 0px;
@@ -348,6 +350,7 @@ article{
 .is-fixed h1{
   padding-left: 100px !important;
   margin-top: 15px;
+  padding-bottom: 0px !important;
 }
 .one h1{
  padding-left:40px;
@@ -386,6 +389,8 @@ article{
     text-align: left;
     transform: translateY(-50%);
     padding-left: 50px;
+    padding-bottom: 40px;
+    
   }
 .conta {
 background: url('./img/e10.jpg');
