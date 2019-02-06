@@ -188,7 +188,7 @@ var menu = $('.a_container'), // スライドインするメニューを指定
   transition: .3s cubic-bezier(.4, 0, .2, 1);
   width: 100%;
   z-index: 1000;
-
+  box-sizing: border-box;
 
 }
 #header img{
@@ -210,9 +210,8 @@ right: 40px;
   top: 0;
   transition: .3s cubic-bezier(.4, 0, .2, 1);
   width: 100%;
-  z-index: 1000;
-
-
+  box-sizing: border-box;
+ 
 }
 #header img{
 height: 50px;
@@ -220,13 +219,14 @@ width: auto;
 margin: 0px;
 margin-right: 50px;
 position: absolute;
-right: 325px;
+
 }
+
 }
 .head-animation {
   transform: translateY(-100%);
 }
 
-}
+
 </style>
 </html>
